@@ -22,4 +22,3 @@ Originally based on [https://github.com/JaKooLit/Arch-Hyprland.git], with person
 
 ----
 # Long may the shadows reflect 🌑...
-"""
