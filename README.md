@@ -17,9 +17,9 @@ Clone the repo and run:
 git clone https://github.com/shxdow/hyprland-rice ~/.config
 ./scripts/setup.sh
 
-#### 🪄 Credits
+### 🪄 Credits
 Originally based on [https://github.com/JaKooLit/Arch-Hyprland.git], with personal sauce added.
 
-
-Long may the shadows reflect 🌑...
+----
+# Long may the shadows reflect 🌑...
 """
