@@ -1,6 +1,6 @@
 # 🖤 Sh.x.dow's Hyprland Setup
 
-> "Monarch of Fractured Realities" 🜁
+> # "Monarch of Fractured Realities" 🜁
 
 ## Features
 - 🪟 Hyprland window manager
