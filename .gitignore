@@ -1,0 +1,14 @@
+# General
+*.log
+.cache/
+__pycache__/
+
+# Wayland / GTK noise
+gtk-3.0/bookmarks
+gtk-4.0/bookmarks
+
+# Secrets (just in case)
+*.key
+*.token
+.env
+
