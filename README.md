@@ -1,24 +1,17 @@
-# 🖤 Sh.x.dow's Hyprland Setup
+# Abysswalker
 
-> # "Monarch of Fractured Realities" 🜁
+Hyprland-based desktop configuration.
+Waybar, Rofi, and theming tuned for a minimal and clean sovereign aesthetic.
 
-## Features
-- 🪟 Hyprland window manager
-- 🍫 Waybar for a stylish top bar
-- 🔎 Rofi as app launcher
-- 🔊 Swaync for notifications
-- 🎨 Wallust for dynamic wallpaper-based theming
-- ✍️ Swappy for screenshots annotation
-- 🧠 Custom random anime logos on terminal open
-- 🎨 Dark, elegant, minimal — rice for the chosen
+## Stack
+- WM: Hyprland
+- Bar: Waybar
+- Launcher: Rofi
+- Theme base: ML4W (customized)
 
-### ⚙️ Setup
-Clone the repo and run:
-git clone https://github.com/shxdow/hyprland-rice ~/.config
-./scripts/setup.sh
+## Notes
+- Fonts required: JetBrainsMono Nerd Font, Noto Sans, ShureTechMono Nerd Font(i use this in my terminal)
+- Intended for Arch Linux
 
-### 🪄 Credits
-Originally based on [https://github.com/JaKooLit/Arch-Hyprland.git], with personal sauce added.
-
-----
-# Long may the shadows reflect 🌑...
+## Screenshots
+Imagine it :)
