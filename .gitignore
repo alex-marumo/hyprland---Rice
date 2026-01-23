@@ -1,14 +1,21 @@
-# General
-*.log
+# caches / generated
 .cache/
-__pycache__/
+**/.cache/
+config/**/.cache/
+config/ml4w/**/hyprland-dotfiles/
+config/ml4w/**/wallpaper-generated/
 
-# Wayland / GTK noise
-gtk-3.0/bookmarks
-gtk-4.0/bookmarks
+# lockscreen generated images
+**/blurred_wallpaper.png
+**/square_wallpaper.png
+**/current_wallpaper
+**/current_wallpaper.rasi
 
-# Secrets (just in case)
-*.key
-*.token
-.env
+# secrets / machine-specific
+**/secrets*
+**/*.key
+**/*.pem
+
+# logs
+**/*.log
 

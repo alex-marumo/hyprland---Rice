@@ -1,0 +1,286 @@
+/*
+#  ____        __ _  
+# |  _ \ ___  / _(_) 
+# | |_) / _ \| |_| | 
+# |  _ < (_) |  _| | 
+# |_| \_\___/|_| |_| 
+#                    
+# by Stephan Raabe (2023) 
+# ----------------------------------------------------- 
+*/
+
+/* ---- Configuration ---- */
+configuration {
+    modi:                       "drun,filebrowser,window,run";
+    font:                       "Fira Sans 11";
+    show-icons:                 true;
+    display-drun:                " ";
+    display-run:                 " ";
+    display-filebrowser:         "";
+    display-window:              "";
+	drun-display-format:        "{name}";
+    hover-select:               false;
+    scroll-method:              1;
+    me-select-entry:            "";
+    me-accept-entry:            "MousePrimary";
+    window-format:              "{w} · {c} · {t}";
+}
+
+/* ---- Load font ---- */
+@import "~/.config/ml4w/settings/rofi-font.rasi"
+
+/* ---- Load colors ---- */
+@import "~/.config/rofi/colors.rasi"
+
+/* ---- Load wallpaper ---- */
+@import "~/.cache/ml4w/hyprland-dotfiles/current_wallpaper.rasi"
+
+/* ---- Load border width ---- */
+@import "~/.config/ml4w/settings/rofi-border.rasi"
+
+/* ---- Load border radius ---- */
+@import "~/.config/ml4w/settings/rofi-border-radius.rasi"
+
+// Main //
+window {
+    height:                      35em;
+    width:                       56em;
+    transparency:                "real";
+    border:                      1px;
+    border-color:                rgba(255,255,255,0.18);
+    border-radius:               28px;
+
+    background-color:            rgba(10, 12, 18,0.30);
+                                 background-image: linear-gradient(
+                                    to bottom,
+                                    rgba(255,255,255,0.20),
+                                    rgba(255,255,255,0.08),
+                                    rgba(255,255,255,0.02),
+                                    rgba(0,0,0,0.18)
+                                 );
+}
+
+mainbox {
+    enabled:                     true;
+    spacing:                     0em;
+    padding:                     0em;
+    orientation:                 horizontal;
+    children:                    [ "imagebox" , "listbox" ];
+    background-color:            transparent;
+}
+
+imagebox {
+    padding:                     20px;
+    orientation:                 vertical;
+    children:                    [ "inputbar", "dummy", "mode-switcher" ];
+    /* give the left pane a faint glass body */
+    background-color:            rgba(12, 14, 20, 0.20);
+    background-image:            linear-gradient(
+                                    to bottom,
+                                    rgba(255, 255, 255, 0.18),
+                                    rgba(255, 255, 255, 0.06),
+                                    rgba(0, 0, 0, 0.14)
+                                 );
+    border-radius:               22px;
+    border-color:                rgba(255, 255, 255, 0.10);
+}
+
+dummy {
+    background-color:            transparent;
+}
+
+// Modes //
+mode-switcher {
+    orientation:                 horizontal;
+    width:                       6.6em;
+    enabled:                     true;
+    padding:                     1.5em;
+    spacing:                     1.5em;
+    background-color:            transparent;
+}
+
+button {
+    padding:                     15px;
+    border-radius:               2em;
+    border:                      0;    
+    cursor:                      pointer;
+    background-color:            @background;
+    text-color:                  @on-surface;
+}
+
+button selected {
+    padding:                     15px;
+    border-radius:               2em;    
+    background-color:            @surface;
+    text-color:                  @on-surface;
+}
+
+// Inputs //
+inputbar {
+    enabled:                     true;
+    margin:                      1em;
+    children:                    [ "textbox-prompt-colon", "entry" ];
+    border-radius:               2em;
+
+    /* liquid pill */
+    background-color:            rgba(12, 14, 20, 0.35);
+    background-image:            linear-gradient(
+                                    to bottom,
+                                    rgba(255,255,255,0.14),
+                                    rgba(255,255,255,0.05),
+                                    rgba(0,0,0,0.12)
+                                 );
+    border:                      1px;
+    border-color:                rgba(255,255,255,0.14);
+}
+
+textbox-prompt-colon {
+    enabled:                     true;
+    expand:                      false;
+    str:                         "  ";
+    padding:                     1em 0.3em 0 0;
+    text-color:                  @on-surface;
+    background-color:            transparent;
+}
+
+entry {
+    enabled:                     true;
+    spacing:                     1em;
+    padding:                     1em;
+    text-color:                  @on-surface;
+    cursor:                      text;
+    placeholder:                 "Search";
+    background-color:            transparent;
+    placeholder-color:           inherit;
+}
+
+// Lists //
+listbox {
+    padding:                     0em;
+    spacing:                     0em;
+    orientation:                 horizontal;
+    children:                    [ "listview" ];
+    /* From opaque panel -> translucent glass */
+    background-color:            rgba(10, 12, 18, 0.14);
+    border-radius:               26px;
+    background-image:            linear-gradient(
+                                    to bottom,
+                                    rgba(255,255,255,0.12),
+                                    rgba(255,255,255,0.03),
+                                    rgba(0,0,0,0.12)
+                                );
+}
+
+listview {
+    padding:                     1.5em;
+    spacing:                     0.5em;
+    enabled:                     true;
+    columns:                     1;
+    lines:                       1;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   false;
+    layout:                      vertical;
+    reverse:                     false;
+    fixed-height:                true;
+    fixed-columns:               true;
+    cursor:                      "default";
+    background-color:            transparent;
+    text-color:                  @on-surface;
+}
+
+// Elements //
+element {
+    enabled:                     true;
+    spacing:                     10px;
+    padding:                     0.5em;
+    cursor:                      pointer;
+    background-color:            transparent;
+    text-color:                  @on-surface;
+}
+
+element selected.normal {
+    background-color:            rgba(255, 255, 255, 0.06);
+    background-image:            linear-gradient(
+                                    to bottom,
+                                    rgba(255,255,255,0.14),
+                                    rgba(255,255,255,0.04),
+                                    rgba(0,0,0,0.10)
+                                );
+    text-color:                  @on-surface;
+    border-radius:               1.6em;
+
+    border:                      1px;
+    border-color:                rgba(255,255,255,0.14);
+}
+
+element normal.normal {
+    background-color:            inherit;
+    text-color:                  @on-surface;
+}
+
+element normal.urgent {
+    background-color:            inherit;
+    text-color:                  @on-surface;
+}
+
+element normal.active {
+    background-color:            inherit;
+    text-color:                  @on-surface;
+}
+
+element selected.urgent {
+    background-color:            inherit;
+    text-color:                  @on-surface;
+}
+
+element selected.active {
+    background-color:            inherit;
+    text-color:                  @on-surface;
+}
+
+element alternate.normal {
+    background-color:            inherit;
+    text-color:                  @on-surface;
+}
+
+element alternate.urgent {
+    background-color:            inherit;
+    text-color:                  @on-surface;
+}
+
+element alternate.active {
+    background-color:            inherit;
+    text-color:                  @on-surface;
+}
+
+element-icon {
+    size:                        3em;
+    cursor:                      inherit;
+    background-color:            transparent;
+    text-color:                  inherit;
+    border-radius:               0em;
+}
+
+element-text {
+    vertical-align:              0.5;
+    horizontal-align:            0.0;
+    cursor:                      inherit;
+    background-color:            transparent;
+    text-color:                  inherit;
+}
+
+// Error message //
+error-message {
+    text-color:                  @on-surface;
+    background-color:            @background;
+    text-transform:              capitalize;
+    children:                    [ "textbox" ];
+}
+
+textbox {
+    text-color:                  inherit;
+    background-color:            inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0.5;
+}
