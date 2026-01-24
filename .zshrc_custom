@@ -1,0 +1,23 @@
+LOGO_DIR="$HOME/.config/fastfetch/images"
+ASCII_FILE="$HOME/.config/fastfetch/akira.txt"
+
+# Pool the images and the custom Kanji
+ALL_LOGOS=("$LOGO_DIR"/* "$ASCII_FILE")
+SELECTED_LOGO="${ALL_LOGOS[$(( RANDOM % ${#ALL_LOGOS[@]} + 1 ))]}"
+
+if [[ "$SELECTED_LOGO" == *".txt" ]]; then
+    # Render the Kanji with the Red/Cyan split
+    fastfetch -c ~/.config/fastfetch/config.jsonc \
+              --logo "$SELECTED_LOGO" \
+              --logo-type auto \
+              --logo-color-1 31 \
+              --logo-color-2 36
+else
+    # Render the random image
+    fastfetch -c ~/.config/fastfetch/config.jsonc \
+              --logo "$SELECTED_LOGO" \
+              --logo-type kitty
+fi
+
+
+#command = "tuigreet --time --width 40 --theme 'border=red;text=cyan;prompt=bright red' --greeting 'SOCIETY_IS_A_LIE' >
