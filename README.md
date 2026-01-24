@@ -1,7 +1,7 @@
 # Abysswalker
 
 Hyprland-based desktop configuration.
-Waybar, Rofi, and theming tuned for a minimal and clean sovereign aesthetic.
+Waybar, Rofi, and theming tuned for a minimal and clean AKIRA aesthetic.
 
 ## Stack
 - WM: Hyprland
